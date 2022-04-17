@@ -2,20 +2,20 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer class="footer-center">
+    <footer className="footer-center">
     <h3>Fits<strong>U</strong> Quiz</h3>
-    <ul class="right-menu">
-        <li><a href="#">
-            <i class="fab fa-github fa-2x"></i>
-        </a></li>
-        <li><a href="#">
-            <i class="fab fa-twitter fa-2x"></i>
-        </a></li>
-        <li><a href="#">
-            <i class="fab fa-linkedin-in fa-2x"></i>
-        </a></li>
+    <ul className="right-menu">
+        <li>
+            <i className="fa fa-github fa-2x"></i>
+       </li>
+        <li>
+            <i className="fa fa-twitter fa-2x"></i>
+      </li>
+        <li>
+            <i className="fa fa-linkedin fa-2x"></i>
+        </li>
     </ul>
-    <p class="copyright">© 2021 CopyRight|Version 1.0</p>
+    <p className="copyright">© 2021 CopyRight|Version 1.0</p>
 </footer>
   )
 }

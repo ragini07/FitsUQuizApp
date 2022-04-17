@@ -1,17 +1,21 @@
 import React from 'react'
+import logo from '../../assets/logo.PNG'
 
 function Header() {
   return (
-    <nav class="main-navhead">
-        <img src="../images/logo.png" alt="Brand Logo"/>
-        <h3>FitsU Play</h3>
-        <ul class="main-menu">
+    <nav className="main-navhead">
+        <div className="quiz-logo">
+        <img src={logo} alt="Brand Logo"/>
+        <h3 className="head-title">KidzWorld</h3>
+        </div>
+     
+        {/* <ul className="main-menu">
             <li><a href="#">Home</a></li>
-        </ul>
-        <ul class="right-menu"> 
-            <li><a href="./Auth/login.html">
-                <i class="fa fa-user fa-2x"></i>
-            </a></li>
+        </ul> */}
+        <ul className="right-menu"> 
+            <li>
+                <i className="fa fa-user fa-2x"></i>
+           </li>
         </ul>
     </nav>
   )

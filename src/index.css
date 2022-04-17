@@ -42,6 +42,14 @@ ul{
   box-shadow: 0 5px 28px rgba(0,0,0,0.25);
   margin-bottom: 1.5rem;
 }
+.head-title{
+  color: var(--primary-color);
+  font-style: italic;
+}
+.quiz-logo{
+  display: flex;
+  align-items: center;
+}
 .main-navhead ul.main-menu{
   flex: 1;
   margin-left: 5rem;
