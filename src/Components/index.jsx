@@ -1,0 +1,7 @@
+export {Header} from './Header/Header'
+export {Footer} from './Footer/Footer'
+export {Home} from './Home/Home'
+export {CategoryQuiz} from './CategoryQuiz/CategoryQuiz'
+export {Rules} from './Rules/Rules'
+export {QuizQuestions} from './QuizQuestions/QuizQuestions'
+export {Answers} from './Answers/Answers'

@@ -1,13 +1,146 @@
-body {
+@import url(https://fitsu-ui-design.netlify.app/css/components.css);
+
+:root{
+  --primary-color: #f2673a;
+  --primary-hover: #e0582b;
+  --primary-lg-hover : #d38f68;
+  --secondary-color: rgb(37, 37, 37);
+  --secondary-hover: rgb(49, 49, 49);
+  --font-primary-color: black;
+  --font--secondary-color: rgb(58, 58, 58);
+  --lg-color: white;
+  --body-background-color: #fdf8d6;
+  --light-gray: rgb(184, 182, 182);
+  --success-color : green;
+  --error-color:#f44336;
+}
+*{
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--body-background-color);
+  color: var(--font-primary-color);
+  font-size: 16px;
+  list-style: 1.5;
+}
+a{
+  color: var(--font--secondary-color);
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+.main-navhead{
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 2rem 3rem;
+  justify-content: space-between; 
+  box-shadow: 0 5px 28px rgba(0,0,0,0.25);
+  margin-bottom: 1.5rem;
+}
+.main-navhead ul.main-menu{
+  flex: 1;
+  margin-left: 5rem;
+  font-weight: bold;
+}
+.main-navhead ul li a:hover{
+  color:var(--primary-color);
+ 
+}
+.main-navhead ul li {
+  padding: 0 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.promo-section{
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+  padding-top: 80px;
+}
+.btn{
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 0.5rem ;
+  background-color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+.btn a{
+  color: var(--lg-color);
+}
+.btn-secondary{
+  background-color: var(--font--secondary-color);
+}
+.promo-img{
+  max-width: 35rem;
+
+}
+.main-container{
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+.title-big{
+  margin: 1rem;
+  font-size: 3rem;
+}
+.category-container{
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.card-with-overlay{
+  padding:1rem;
+  margin: 1rem;
+  width: 100%;
+  box-shadow: 0 5px 5px rgb(0 0 0 / 25%);
+}
+.card-with-overlay img{
+  max-width: 250px;
+  height: 250px;
+
+}
+.card-title{
+  color: var(--lg-color);
+  font-size: 1.5rem;
+}
+.footer-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem;
+  min-height: 3rem; 
+  background-color: var(--primary-color);
+  color: var(--lg-color);
+}
+.footer-center li{
+  margin: 1rem;
+}
+.copyright {
+  font-size: 0.7rem;
+}
+@media (max-width:700px) {
+  .category-container{
+      flex-direction: column;
+  }
+}
+@media (max-width:900px) {
+  .promo-section{
+      flex-direction: column;
+  }
 }
