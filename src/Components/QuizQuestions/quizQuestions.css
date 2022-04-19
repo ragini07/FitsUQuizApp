@@ -32,22 +32,35 @@
     flex-direction: column;
 }
 .options input{
-    display: none;
+    /* display: none; */
 }
 .options label{
     background-color: var(--body-background-color);
     box-shadow: 0 2px 3px rgba(0,0,0,0.25);
     margin: 0.5rem;
     border-radius: 5px;
+}
+.options label span{
+    width: 100%;
+    height: 100%;
+    display: block;
     padding: 0.5rem;
+ 
 }
 .options label:hover{
-    background-color: var(--primary-lg-hover);
+    background-color: var(--primary-color);
+    color: var(--lg-color);
     cursor: pointer;
 }
-.options label:active{
+/* .options label input:checked{
     background-color: var(--primary-color);
     cursor: pointer;
+} */
+:checked + span{
+    background-color: var(--primary-color);
+    cursor: pointer;
+    color: var(--lg-color);
+    border: 1px solid var(--font--secondary-color);
 }
 .btnn a{
     color: var(--lg-color);

@@ -1,15 +1,22 @@
 import './quizQuestions.css'
-import React from 'react'
+import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
+import {useData} from '../../Context/quiz-context'
 
 function QuizQuestions() {
+    const [questionNo , setQuestionNo] = useState(0);
+    const navigate = useNavigate()
+    const { quizState, dispatchQuizState } = useData()
+    const {quiz} = quizState
+    const quizData = quiz.mcqs[questionNo]
+    console.log("quiz",quiz)
+    console.log(quiz.mcqs[questionNo])
+  
   return (
     <>
 
             <div className="main-container">
-         
-                
-                
-        
+
          <div className="quiz-card">
            
            <div className="top-container">
@@ -18,33 +25,36 @@ function QuizQuestions() {
              
            </div>
              <div className="quiz-section-1">
-                 <h3>Question : 1/5</h3>
+                 <h3>Question : {questionNo+1}/5</h3>
                  <h3>Score : 0</h3>
              </div>
              <div className="quiz-section-2">
-                 <div className="question">Which of the below is the biggest reptile in the World?</div>
+                 <div className="question">{quizData.question}</div>
              </div>
              <div className="quiz-section-3">
                  <div className="options">
-                       <label for="option1">
-                           <input type="radio" name="radio" id="option1"/>
-                           Green anaconda
-                       </label>
-                       <label for="option2">
-                           <input type="radio" name="radio" id="option2"/>
-                           Green anaconda
-                       </label>
-                       <label for="option3">
-                           <input type="radio" name="radio" id="option3"/>
-                           Green anaconda
-                       </label>
-                       <label for="option4">
-                           <input type="radio" name="radio" id="option4"/>
-                           Green anaconda
-                       </label>
+                     {
+                         quizData.options.map(option => {
+                             return (
+                                <label>
+                                <input type="radio" name="radio" id={option}/>
+                                <span>{option}</span>
+                               
+                            </label>
+                             )
+                         })
+                     }
+            
                  </div>
              </div>
-         <a href="../ResultPage/result.html" className="full-width-cta"><button className="btn full-width-cta">Next <i className="fa fa-arrow-right"></i></button></a>   
+             {
+                 quiz.mcqs.length-1 === questionNo ? 
+                 <button className="btn full-width-cta"
+                 onClick={() => navigate('/answers')}>Submit <i className="fa fa-arrow-right"></i></button>:
+                 <button className="btn full-width-cta"
+                 onClick={() => setQuestionNo(prev => prev+1)}>Next <i className="fa fa-arrow-right"></i></button>
+             }
+        
        </div>
        </div>
     </>
