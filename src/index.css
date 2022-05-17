@@ -45,6 +45,7 @@ ul{
 .head-title{
   color: var(--primary-color);
   font-style: italic;
+  cursor: pointer;
 }
 .quiz-logo{
   display: flex;
@@ -121,6 +122,7 @@ ul{
 .card-with-overlay img{
   max-width: 250px;
   height: 250px;
+  border-radius: 0.3rem;
 
 }
 .card-title{
@@ -150,5 +152,11 @@ ul{
 @media (max-width:900px) {
   .promo-section{
       flex-direction: column;
+  }
+  .title-big{
+    padding-top: 3rem;
+  }
+  .card-with-overlay img{
+    max-width: 100%;
   }
 }

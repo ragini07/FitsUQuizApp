@@ -16,7 +16,7 @@ import {
 } from "./backend/controllers/QuizesController";
 
 import { categories } from "./backend/db/categories";
-import { quizzes } from "./backend/db/quizzes";
+import {quizzes} from "./backend/db/quizzes"
 import { users } from "./backend/db/users";
 
 export function makeServer({ environment = "development" } = {}) {
