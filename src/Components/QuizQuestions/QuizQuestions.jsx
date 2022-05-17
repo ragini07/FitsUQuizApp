@@ -13,7 +13,20 @@ function QuizQuestions() {
   const { quiz } = quizState;
   const quizData = quiz.mcqs[questionNo];
 
-  
+  useEffect(() => {
+    let intervalID = setInterval(() => {
+      if (timer === 1) {
+        nextClickHandler();
+      } else {
+        setTimer((prev) => prev - 1);
+      }
+    }, 1000);
+    return () => {
+      clearInterval(intervalID);
+    };
+  }, [timer]);
+
+
 
   const nextClickHandler = () => {
     dispatchQuizState({
@@ -31,7 +44,8 @@ function QuizQuestions() {
     else setTimer(30);
   };
   const quitHandler = () => {
- 
+    navigate("/");
+    dispatchQuizState({ type: ACTION_TYPE.CLEAR_FILTER });
   };
 
   return (
