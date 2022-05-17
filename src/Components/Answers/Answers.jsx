@@ -17,7 +17,7 @@ function Answers() {
             <h1>Result</h1>
             <h2>Yeah !! You have Passed.🎉</h2>
             <h3>Final Score : 80/100</h3>
-            <!-- 😔 -->
+            {/* <!-- 😔 --> */}
             <div class="quiz-card">
               <div class="quiz-section-1">
                   <h3>Question : 1</h3>
