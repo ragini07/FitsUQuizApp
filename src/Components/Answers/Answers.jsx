@@ -34,7 +34,7 @@ function Answers() {
 
       <div className="main-container ans-container">
         <h1>Result</h1>
-        {(score / quiz.mcqs.length) * 10 * 100 >= 60 ? (
+        {(score / quiz.mcqs.length* 10)  * 100 >= 60 ? (
           <h2>Yeah !! You have Passed.🎉</h2>
         ) : (
           <h2>Oops !! Better luck next time.😔</h2>
