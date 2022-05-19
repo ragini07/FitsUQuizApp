@@ -26,7 +26,7 @@ function Home() {
           <button className="btn">
             <a href="#explore">
               Explore Quiz <i className="fa fa-chevron-right"></i>
-            </a>{" "}
+            </a>
           </button>
         </div>
         <img
