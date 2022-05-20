@@ -25,7 +25,7 @@ function Header() {
       </div>
 
       <ul className="right-menu">
-        <li onClick={() => toggleTheme()}>
+        <li onClick={() => toggleTheme()} className="list-item">
           {theme === "light" ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -163,6 +163,9 @@ ul{
 .copyright {
   font-size: 0.7rem;
 }
+.list-item{
+  cursor: pointer;
+}
 @media (max-width:700px) {
   .category-container{
       flex-direction: column;
