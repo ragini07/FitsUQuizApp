@@ -1,12 +1,11 @@
 import { createContext, useContext, useReducer, useState } from "react";
 import { quizReducerFtn } from "../Reducer/quizReducer";
-import {initialState} from '../Utility/constants'
+import { initialState } from "../Utility/constants";
 
 const QuizContext = createContext();
 
 const QuizProvider = ({ children }) => {
-
-  const [categorySelected , setCategorySelected] = useState("")
+  const [categorySelected, setCategorySelected] = useState("");
   const [quizState, dispatchQuizState] = useReducer(
     quizReducerFtn,
     initialState
@@ -14,8 +13,10 @@ const QuizProvider = ({ children }) => {
   return (
     <QuizContext.Provider
       value={{
-        quizState, dispatchQuizState
-,categorySelected , setCategorySelected 
+        quizState,
+        dispatchQuizState,
+        categorySelected,
+        setCategorySelected,
       }}
     >
       {children}

@@ -22,10 +22,10 @@ function CategoryQuiz() {
   }, []);
   return (
     <div className="main-container" id="category">
-      <h1 className="title-big">{categorySelected}</h1>
+      <h1 className="title-big text-color">{categorySelected}</h1>
       <div className="category-container">
         {loading ? (
-          <div>Loading...</div>
+          <div className="text-color">Loading...</div>
         ) : (
           quizzesByCategory.map(
             ({ _id, title, imageUrl, totalScore, mcqs }) => {
