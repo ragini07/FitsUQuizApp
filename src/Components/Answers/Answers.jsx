@@ -10,107 +10,87 @@ function Answers() {
   const navigate = useNavigate();
   const { quiz, selectedQuestions } = quizState;
 
+  useEffect(() => {
+    const totalScore = selectedQuestions.reduce((acc, curr) => {
+      if (curr.optionSelected === curr.answer) acc += 10;
+      return acc;
+    }, 0);
+    setScore(totalScore);
+  }, []);
 
   return (
     <>
-         <div class="main-container">
-            <h1>Result</h1>
-            <h2>Yeah !! You have Passed.🎉</h2>
-            <h3>Final Score : 80/100</h3>
-            {/* <!-- 😔 --> */}
-            <div class="quiz-card">
-              <div class="quiz-section-1">
-                  <h3>Question : 1</h3>
-                  <h3>Score : 0</h3>
-              </div>
-              <div class="quiz-section-2">
-                  <div class="question">Which of the below is the biggest reptile in the World?</div>
-              </div>
-              <div class="quiz-section-3">
-                  <div class="option">
-                        <label for="option1">
-                            <input type="radio" name="radio" id="option1" disabled/>
-                            Green anaconda
+      <div className="center-btn">
+        <button
+          className="btnn btn-secondary center"
+          onClick={() => {
+            navigate("/");
+            dispatchQuizState({ type: ACTION_TYPE.HOME_DATA });
+          }}
+        >
+          <i className="fa fa-arrow-left"></i> Back To Home
+        </button>
+      </div>
+
+      <div className="main-container ans-container">
+        <h1>Result</h1>
+        {(score / (quiz.mcqs.length* 10))  * 100  >= 60 ? (
+          <h2>Yeah !! You have Passed.🎉</h2>
+        ) : (
+          <h2>Oops !! Better luck next time.😔</h2>
+        )}
+
+        <h3>
+          Final Score : {score}/{quiz.mcqs.length * 10}
+        </h3>
+
+        {quiz.mcqs.map(({ _id, question, options, answer }, index) => {
+          return (
+            <>
+              <div className="quiz-card" key={_id}>
+                <div className="quiz-section-1">
+                  <h3>Question : {index + 1}</h3>
+                </div>
+                <div className="quiz-section-2">
+                  <div className="question">{question}</div>
+                </div>
+                <div className="quiz-section-3">
+                  <div className="option">
+                    {options.map((option) => {
+                      return (
+                        <label
+                          key={option}
+                          className={
+                            option === answer
+                              ? "success"
+                              : option ===
+                                selectedQuestions[index].optionSelected
+                              ? "error"
+                              : ""
+                          }
+                        >
+                          <input
+                            type="radio"
+                            name="radio"
+                            id={option}
+                            disabled
+                          />
+                          <span>{option}</span>
                         </label>
-                        <label for="option2" class="success">
-                            <input type="radio" name="radio" id="option2" disabled/>
-                            Green anaconda
-                        </label>
-                        <label for="option3">
-                            <input type="radio" name="radio" id="option3" disabled/>
-                            Green anaconda
-                        </label>
-                        <label for="option4" class="error">
-                            <input type="radio" name="radio" id="option4" disabled/>
-                            Green anaconda
-                        </label>
+                      );
+                    })}
                   </div>
+                </div>
               </div>
-          </div>
-            <div class="divider"></div>
-          <div class="quiz-card">
-            <div class="quiz-section-1">
-                <h3>Question : 2</h3>
-                <h3>Score : 10</h3>
-            </div>
-            <div class="quiz-section-2">
-                <div class="question">Which of the below is the biggest reptile in the World?</div>
-            </div>
-            <div class="quiz-section-3">
-                <div class="option">
-                      <label for="option1" class="success">
-                          <input type="radio" name="radio" id="option1" disabled/>
-                          Green anaconda
-                      </label>
-                      <label for="option2">
-                          <input type="radio" name="radio" id="option2" disabled/>
-                          Green anaconda
-                      </label>
-                      <label for="option3">
-                          <input type="radio" name="radio" id="option3" disabled/>
-                          Green anaconda
-                      </label>
-                      <label for="option4">
-                          <input type="radio" name="radio" id="option4" disabled/>
-                          Green anaconda
-                      </label>
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-        <div class="quiz-card">
-            <div class="quiz-section-1">
-                <h3>Question : 3</h3>
-                <h3>Score : 0</h3>
-            </div>
-            <div class="quiz-section-2">
-                <div class="question">Which of the below is the biggest reptile in the World?</div>
-            </div>
-            <div class="quiz-section-3">
-                <div class="option">
-                      <label for="option1" class="error">
-                          <input type="radio" name="radio" id="option1" disabled/>
-                          Green anaconda
-                      </label>
-                      <label for="option2">
-                          <input type="radio" name="radio" id="option2" disabled/>
-                          Green anaconda
-                      </label>
-                      <label for="option3" class="success">
-                          <input type="radio" name="radio" id="option3" disabled/>
-                          Green anaconda
-                      </label>
-                      <label for="option4">
-                          <input type="radio" name="radio" id="option4" disabled/>
-                          Green anaconda
-                      </label>
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
+              <div className="divider"></div>
+            </>
+          );
+        })}
 
-        </div>
-
+       
+          
+               
+      </div>
     </>
   );
 }
