@@ -22,7 +22,7 @@ function Answers() {
     <>
       <div className="center-btn">
         <button
-          className="btnn btn-secondary center"
+          className="btn center"
           onClick={() => {
             navigate("/");
             dispatchQuizState({ type: ACTION_TYPE.HOME_DATA });
@@ -32,9 +32,9 @@ function Answers() {
         </button>
       </div>
 
-      <div className="main-container ans-container">
+      <div className="main-container ans-container text-color">
         <h1>Result</h1>
-        {(score / (quiz.mcqs.length* 10))  * 100  >= 60 ? (
+        {(score / (quiz.mcqs.length * 10)) * 100 >= 60 ? (
           <h2>Yeah !! You have Passed.🎉</h2>
         ) : (
           <h2>Oops !! Better luck next time.😔</h2>
@@ -86,10 +86,6 @@ function Answers() {
             </>
           );
         })}
-
-       
-          
-               
       </div>
     </>
   );

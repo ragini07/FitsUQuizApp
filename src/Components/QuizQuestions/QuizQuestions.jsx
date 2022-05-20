@@ -26,8 +26,6 @@ function QuizQuestions() {
     };
   }, [timer]);
 
-
-
   const nextClickHandler = () => {
     dispatchQuizState({
       type: ACTION_TYPE.NEXT_QUESTION,

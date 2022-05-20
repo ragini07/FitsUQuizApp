@@ -22,7 +22,7 @@ function Home() {
     <>
       <header className="promo-section">
         <div className="promo-text-container">
-          <h1>Take a Quiz and enjoy with fun.</h1>
+          <h1 className="text-color">Take a Quiz and enjoy with fun.</h1>
           <button className="btn">
             <a href="#explore">
               Explore Quiz <i className="fa fa-chevron-right"></i>
@@ -36,7 +36,7 @@ function Home() {
         />
       </header>
       <div className="main-container" id="explore">
-        <h1 className="title-big">Category</h1>
+        <h1 className="title-big text-color">Category</h1>
         <div className="category-container">
           {categories.map(({ _id, categoryName, imageUrl }) => {
             return (

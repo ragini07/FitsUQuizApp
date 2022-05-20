@@ -9,10 +9,27 @@
   --font-primary-color: black;
   --font--secondary-color: rgb(58, 58, 58);
   --lg-color: white;
-  --body-background-color: #fdf8d6;
+  --secondary-background-color : #fdf8d6;
   --light-gray: rgb(184, 182, 182);
   --success-color : green;
   --error-color:#f44336;
+
+ 
+}
+.light-theme{
+ 
+  --body-background-color: #fdf8d6;
+  --text-color : rgb(44, 41, 41);
+  background-color: var(--body-background-color);
+  min-height: 100vh;
+}
+.dark-theme{
+
+  --body-background-color: #45453e;
+  --text-color : white;
+  background-color: var(--body-background-color);
+  min-height: 100vh;
+ 
 }
 *{
   box-sizing: border-box;
@@ -21,7 +38,6 @@
 }
 body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--body-background-color);
   color: var(--font-primary-color);
   font-size: 16px;
   list-style: 1.5;
@@ -94,8 +110,11 @@ ul{
   max-width: 35rem;
 
 }
+.text-color{
+  color : var(--text-color);
+}
 .main-container{
-  margin: 1.5rem 0;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,6 +162,9 @@ ul{
 }
 .copyright {
   font-size: 0.7rem;
+}
+.list-item{
+  cursor: pointer;
 }
 @media (max-width:700px) {
   .category-container{
