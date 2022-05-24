@@ -20,6 +20,7 @@
 * Quit quiz
 * Timer per questions
 * Responsive
+* Dark Mode
 
 ## Demo
 
